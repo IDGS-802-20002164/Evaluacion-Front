@@ -1,0 +1,18 @@
+<div class="edit-form">
+  <h3>Agregar Detalle de Producto</h3>
+  <hr>
+  <form (ngSubmit)="agregarDetalle()">
+    <div class="form-group">
+      <label for="id_materia">Materia Prima</label>
+      <select name="id_materia" [(ngModel)]="regDetalleProducto.id_materia"
+       id="id_materia" class="form-control" required (change)="obtenerUnidad(regDetalleProducto.id_materia)">
+        <option *ngFor="let materia of dataSource" [value]="materia.id">{{ materia.nombre }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="cantidad">Cantidad necesaria en {{ unidadMedidaSeleccionada }}</label>
+      <input type="number" name="cantidad" [(ngModel)]="regDetalleProducto.cantidad" id="cantidad" class="form-control" placeholder="Cantidad" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+</div>

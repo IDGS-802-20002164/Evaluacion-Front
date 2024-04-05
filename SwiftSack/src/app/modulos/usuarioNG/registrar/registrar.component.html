@@ -1,0 +1,27 @@
+<div class="register-form">
+    <h3>Registrar Nuevo Usuario</h3>
+    <hr>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width form-group">
+        <mat-label>Nombre</mat-label>
+        <input name="name" matInput placeholder="Nombre" [(ngModel)]="usuarioRegistro.name" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-group">
+        <mat-label>Correo Electrónico</mat-label>
+        <input name="email" matInput placeholder="Correo Electrónico" [(ngModel)]="usuarioRegistro.email" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-group">
+        <mat-label>Contraseña</mat-label>
+        <input name="password" type="password" matInput placeholder="Contraseña" [(ngModel)]="usuarioRegistro.password" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-group">
+        <mat-label>Teléfono</mat-label>
+        <input name="telefono" matInput placeholder="Teléfono" [(ngModel)]="usuarioRegistro.telefono" pattern="[0-9]*" required>
+      </mat-form-field>
+      <div class="d-flex justify-content-center">
+        <button mat-raised-button color="primary" type="submit">Registrar</button>
+      </div>
+    </form>
+  </div>
+  
+  

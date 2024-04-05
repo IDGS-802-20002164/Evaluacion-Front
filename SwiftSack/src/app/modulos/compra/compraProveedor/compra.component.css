@@ -1,0 +1,8 @@
+.formulario{
+    background-color: #c4ba9c;
+    padding: 1.5rem;
+}
+
+mat-form-field{
+    width: 20rem;
+}

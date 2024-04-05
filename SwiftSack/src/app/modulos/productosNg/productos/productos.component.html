@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-header">
+    <i class="fas fa-list fa-lg"></i> Productos
+  </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">Filtrar por:</div>
+        <div class="col-custom">
+          <input [(ngModel)]="listFilter" class="form-control" name="filter" type="text">
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button mat-flat-button color="primary" [routerLink]="['/AgregarProd']" >Nuevo Producto</button>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Filtro: {{listFilter}} </h3>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table" *ngIf="productoIric.length" >
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Costo</th>
+              <th>Stock</th>
+              <th>Tipo Producto</th>
+              <th>Foto</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of getCurrentPageItems() | productoFilter:listFilter ">
+              <td>{{producto.id}}</td>
+              <td>{{producto.nombre | uppercase}}</td>
+              <td>{{producto.costo}}</td>
+              <td>{{producto.stock}}</td>
+              <td>{{producto.tipo_producto}}</td>
+              <td>
+              <div class="action-buttons">
+                <button mat-flat-button color="primary" [routerLink]="['/EditarProd', producto.id]">Editar</button>
+                <button mat-flat-button color="primary" [routerLink]="['/verDetalle', producto.id]">Ver Detalle</button>
+                <button mat-flat-button color="primary" (click)="eliminarProducto(producto.id)" *ngIf="producto.stock === 0">Eliminar</button>
+             </div>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button mat-flat-button color="primary" [routerLink]="['/AgregarStock']" class="big-button">Agregar stock</button>
+
+      <div class="pagination-buttons">
+        <button mat-flat-button color="primary" [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">Anterior</button>
+        <button mat-flat-button color="primary" [disabled]="currentPage * pageSize >= dataSource.length" (click)="currentPage = currentPage + 1">Siguiente</button>
+      </div>
+    </div>
+  </div>

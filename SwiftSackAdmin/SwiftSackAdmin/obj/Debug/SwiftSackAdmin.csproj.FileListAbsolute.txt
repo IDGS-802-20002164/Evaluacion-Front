@@ -1,0 +1,10 @@
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\bin\Debug\SwiftSackAdmin.exe.config
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\bin\Debug\SwiftSackAdmin.exe
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\bin\Debug\SwiftSackAdmin.pdb
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\obj\Debug\SwiftSackAdmin.csproj.AssemblyReference.cache
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\obj\Debug\SwiftSackAdmin.Login.resources
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\obj\Debug\SwiftSackAdmin.Properties.Resources.resources
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\obj\Debug\SwiftSackAdmin.csproj.GenerateResource.cache
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\obj\Debug\SwiftSackAdmin.csproj.CoreCompileInputs.cache
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\obj\Debug\SwiftSackAdmin.exe
+C:\Users\machi\source\repos\SwiftSackAdmin\SwiftSackAdmin\obj\Debug\SwiftSackAdmin.pdb

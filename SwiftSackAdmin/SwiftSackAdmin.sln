@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftSackAdmin", "SwiftSackAdmin\SwiftSackAdmin.csproj", "{817268D7-958C-4948-82A0-41EA7E88825D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{817268D7-958C-4948-82A0-41EA7E88825D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817268D7-958C-4948-82A0-41EA7E88825D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817268D7-958C-4948-82A0-41EA7E88825D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817268D7-958C-4948-82A0-41EA7E88825D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4D20F97-0F8F-4CDF-95EB-00A15EE37166}
+	EndGlobalSection
+EndGlobal

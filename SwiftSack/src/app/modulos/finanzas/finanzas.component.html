@@ -1,0 +1,187 @@
+<div class="month-select">
+  <label for="monthSelect">Seleccionar Mes:</label>
+  <select id="monthSelect" [(ngModel)]="selectedMonth" (ngModelChange)="filtar()">
+    <option *ngFor="let month of monthNames" [value]="month">{{ month }}</option>
+  </select>
+</div>
+
+<div class="card text-center" *ngIf="noDataAvailable">
+  <div class="card-body">
+    <p style="color: red;">No hay datos disponibles</p>
+  </div>
+</div>
+
+<h1 >Valores Calculados</h1>
+<div class="card-container">
+  
+  <div class="card text-center" *ngFor="let valor of valoresCalculados">
+   
+    <div class="card-header">
+      Beneficio Bruto
+    </div>
+    <div class="card-body">
+      $ {{ valor.gross_profit }}
+    </div>
+  </div>
+  
+  <div class="card text-center" *ngFor="let valor of valoresCalculados">
+    <div class="card-header">
+      Valor de Compra Promedio
+    </div>
+    <div class="card-body">
+      $ {{ valor.average_purchase_value }}
+    </div>
+  </div>
+  
+  <div class="card" *ngFor="let valor of valoresCalculados">
+    <div class="card-header text-center">
+      Total de Usuarios
+    </div>
+    <div class="card-body">
+      {{ valor.total_users }}
+    </div>
+  </div>
+  
+  <div class="card" *ngFor="let valor of valoresCalculados">
+    <div class="card-header">
+      Valor de Venta Promedio
+    </div>
+    <div class="card-body">
+      {{ valor.average_order_value }}
+    </div>
+  </div>
+</div>
+<br><br>
+<div >
+  <div class="cardTable-card text-center" *ngIf="topClientes.length > 0">
+    <h2>Top 5 clientes</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Telefono</th>
+          <th>Email</th>
+          <th>Num. Pedidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let clientes of topClientes">
+          <td>{{ clientes.name }}</td>
+          <td>{{ clientes.telefono }}</td>
+          <td>{{ clientes.email }}</td>
+          <td>{{ clientes.numPedidos }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<div class="cardTable">
+  <div class="cardTable-wrapper" >
+    <div class="cardTable-card text-center" *ngIf="productosMasVendidos.length > 0">
+      <h2>Productos Más Vendidos</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Costo</th>
+            <th>Total obtenido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productosMasVendidos">
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.cantidad }}</td>
+            <td>{{ producto.costo }}</td>
+            <td>{{ producto.total_obtenido }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ 
+    <div class="cardTable-card text-center" *ngIf="productosMenosVendidos.length > 0">
+      <h2>Productos Menos Vendidos</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Costo</th>
+            <th>Total obtenido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productosMenosVendidos">
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.cantidad }}</td>
+            <td>{{ producto.costo }}</td>
+            <td>{{ producto.total_obtenido }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="chart-container" *ngIf="ventasMensuales.length > 0">
+  <ngx-charts-pie-grid
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="single" 
+  (select)="onSelect($event)"
+  [ngClass]="{'white-label': true}">
+</ngx-charts-pie-grid>
+</div>
+
+
+
+
+<div class="cardTable">
+  <div class="cardTable-wrapper">
+    <div class="cardTable-card text-center" *ngIf="productExis.length > 0">
+      <h2>Productos Existencias del mes</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Costo</th>
+            <th>Tipo de producto</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productExis">
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.costo }}</td>
+            <td>{{ producto.tipo_producto }}</td>
+            <td>{{ producto.stock }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+ 
+    <div class="cardTable-card text-center" *ngIf="materiaExist.length > 0">
+      <h2>Materias Existencias del mes</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let materia of materiaExist">
+            <td>{{ materia.nombre }}</td>
+            <td>{{ materia.cantidad }}</td>
+            <td>{{ materia.costo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

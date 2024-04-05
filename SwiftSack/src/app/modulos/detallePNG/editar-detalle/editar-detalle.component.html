@@ -1,0 +1,17 @@
+<div class="edit-form">
+  <h3>Detalle de Producto</h3>
+  <hr>
+  <form (ngSubmit)="editar()">
+    <div class="form-group">
+      <label>Materia Prima: {{regMateria.nombre}}</label>
+     </div>
+    <div class="form-group">
+      <label for="cantidad">Cantidad necesaria en {{regMateria.unidad_medida }}</label>
+      <input type="number" name="cantidad" [(ngModel)]="regDetalleProducto.cantidad" id="cantidad" class="form-control" placeholder="Cantidad">
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+  </form>
+</div>
+
+
+

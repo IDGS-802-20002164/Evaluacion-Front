@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <div class="card col-8 rounded-pill title" style="background-color: #c4ba9c">
+                <div class="card-body">
+                    <h1>Mis Pedidos</h1>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let pedido of pedidos" class="row d-flex justify-content-center">
+            <div class="card mt-4 col-8">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <h3 class="card-title text-uppercase text-">{{usuario.name}}</h3>
+                            <h3>{{usuario.email}}</h3>
+                            <h4>Folio: <strong>{{pedido.folio}}</strong></h4>
+                        </div>
+                        <div class="col-2 mt-5">
+                            <button mat-raised-button color="primary" class="p-4" [routerLink]="['/verDetallePedidoC',pedido.id]">Rastrear Pedido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

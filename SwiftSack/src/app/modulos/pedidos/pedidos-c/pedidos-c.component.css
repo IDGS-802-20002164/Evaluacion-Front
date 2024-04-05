@@ -1,0 +1,64 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tracking-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.tracking-number {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.tracking-status {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.tracking-progress {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 10px;
+    background-color: #f0f0f0;
+    position: relative;
+    border-radius: 5px;
+}
+
+.progress {
+    position: absolute;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #007bff;
+}
+
+.progress-marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+h3 {
+    color: black;
+}

@@ -1,0 +1,67 @@
+<div class="row d-flex justify-content-center">
+    <div class="card formulario col-12 text-center">
+        <h1>Compra de Productos a Proveedores</h1>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <form>
+                        <mat-form-field>
+                            <mat-label>Seleccionar proveedor</mat-label>
+                            <mat-select name="idProveedor" (ngModelChange)="obtenerMateriaProveedor(regMateriaPss.idProveedor+1);" [(ngModel)]="regMateriaPss.idProveedor" id="idProveedor" required>
+                                <mat-option  *ngFor="let proveedor of proveedores" [value]="proveedor.id">
+                                    {{proveedor.nombre}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Seleccionar insumo</mat-label>
+                            <mat-select name="nombre" id="nombre" (selectionChange)="obtenerMateria(regMateriaPss.id);" [(ngModel)]="regMateriaPss.id" required>
+                                <mat-option *ngFor="let materia of materias" [value]="materia.id">
+                                    {{materia.nombre}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Cantidad comprada</mat-label>
+                            <input name="cantidad" id="cantidad"[(ngModel)]="setMateria.cantidad" type="number" matInput placeholder="20" value="150">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Precio pagado por unidad</mat-label>
+                            <input name="precio" id="precio" [(ngModel)]="setMateria.precio" type="number" matInput placeholder="20" value="150">
+                        </mat-form-field>
+                        <div class="d-flex justify-content-center">
+                            <button mat-raised-button color="primary" type="submit" (click)="setMateriaCompra();">Agregar a la orden</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Subtotal</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let row of dataSource">
+                            <td>{{row.nombre}}</td>
+                            <td>{{row.cantidad}}</td>
+                            <td>{{row.precio}}</td>
+                            <td>{{row.subtotal}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-end">
+                        <h2>Total: ${{total}}</h2>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button mat-raised-button color="primary" (click)="insertarCompra();">Finalizar orden</button>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

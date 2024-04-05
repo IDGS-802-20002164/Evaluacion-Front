@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    <i class="fas fa-eye fa-lg"></i> Detalle de Producto
+  </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table" *ngIf="detalleCompletoList.length > 0">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Materia Prima</th>
+              <th>Cantidad</th>
+              <th>Unidad de medida</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let detalle of getCurrentPageItems()  ">
+              <td>{{detalle.id}}</td>
+              <td>{{detalle.materia.nombre}}</td>
+              <td>{{detalle.cantidad}}</td>
+              <td>{{detalle.materia.unidad_medida}}</td>
+              <td>
+              <div class="action-buttons">
+                <button mat-flat-button color="primary" [routerLink]="['/EditarDetalle', detalle.id]">Editar</button>
+                <button mat-flat-button color="primary" (click)="eliminarProducto(detalle.id)">Eliminar</button>
+             </div>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="detalleCompletoList.length === 0" class="texto">No hay detalles disponibles.</div>
+      </div>
+      <button mat-flat-button color="primary" [routerLink]="['/AgregarDetalle', id]" class="big-button">Agregar detalle</button>
+
+      <div class="pagination-buttons">
+        <button mat-flat-button color="primary" [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">Anterior</button>
+        <button mat-flat-button color="primary" [disabled]="currentPage * pageSize >= dataSource.length" (click)="currentPage = currentPage + 1">Siguiente</button>
+      </div>
+    </div>
+  </div>

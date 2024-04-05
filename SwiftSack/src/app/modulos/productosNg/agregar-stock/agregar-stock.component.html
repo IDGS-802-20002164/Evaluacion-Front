@@ -1,0 +1,25 @@
+<div class="edit-form">
+  <h3>Agregar a Stock</h3>
+  <hr>
+  <form (ngSubmit)="agregarStock()">
+    <mat-form-field class="form-group">
+      <mat-label>Materia Prima:</mat-label>
+      <mat-select name="id_materia" [(ngModel)]="regProducto.id" id="id_materia" required>
+        <mat-option *ngFor="let producto of dataSource" [value]="producto.id">
+          {{ producto.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Cantidad a agregar:</mat-label>
+      <input name="stock" matInput placeholder="src" [(ngModel)]="regProducto.stock" required>
+    </mat-form-field>
+    <br>
+    <div class="d-flex justify-content-center">
+      <button mat-raised-button color="primary" type="submit">Agregar</button>
+    </div>
+  </form>
+</div>
+
+
+

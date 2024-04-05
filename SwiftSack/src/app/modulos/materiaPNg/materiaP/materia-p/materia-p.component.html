@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-header">
+    <i class="fas fa-flask fa-lg"></i> Lista Materia Prima
+  </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">Filtrar por:</div>
+        <div class="col-custom">
+          <input [(ngModel)]="listFilter" class="form-control" name="filter" type="text">
+        </div>
+        <div class="col-md-7">
+          <div class="d-flex justify-content-end">
+            <button mat-flat-button color="primary" [routerLink]="['/SurtirMP']" >Surtir materia prima</button> &nbsp;
+            <button mat-flat-button color="primary" [routerLink]="['/AgregarMP']" >Nueva materia prima</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Filtro: {{listFilter}} </h3>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped" *ngIf="proveedorIric.length" >
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Unidad Medida</th>
+              <th>Costo</th>
+              <th>id Proveedor</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let materia of getCurrentPageItems()">
+              <td>{{materia.id}}</td>
+              <td>{{materia.nombre | uppercase}}</td>
+              <td>{{materia.cantidad}}</td>
+              <td>{{materia.unidad_medida}}</td>
+              <td>{{materia.costo}}</td>
+              <td>{{materia.idProveedor}}</td>
+              <td>
+                <div class="action-buttons">
+   
+                <button mat-flat-button color="primary" [routerLink]="['/EditarMP',materia.id]" >Editar</button>
+                <button mat-flat-button color="primary" (click)="eliminarMateria(materia.id)">Eliminar</button>
+              </div>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination-buttons">
+        <button mat-flat-button color="primary" [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">Anterior</button>
+        <button mat-flat-button color="primary" [disabled]="currentPage * pageSize >= dataSource.length" (click)="currentPage = currentPage + 1">Siguiente</button>
+      </div>
+    </div>
+  </div>

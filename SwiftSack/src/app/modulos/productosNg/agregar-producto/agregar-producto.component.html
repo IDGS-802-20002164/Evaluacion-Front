@@ -1,0 +1,35 @@
+<div class="edit-form">
+  <h3>Agregar Producto</h3>
+  <hr>
+  <form (ngSubmit)="agregar()">
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Nombre</mat-label>
+      <input name="nombre" matInput placeholder="Nombre" [(ngModel)]="regProducto.nombre" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Descripcion</mat-label>
+      <input name="descripcion" matInput placeholder="Descripcion" [(ngModel)]="regProducto.descripcion" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Costo</mat-label>
+      <input name="costo" type="number" matInput placeholder="Costo" [(ngModel)]="regProducto.costo" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Tipo de producto</mat-label>
+      <input name="tipo_producto" matInput placeholder="Tipo del producto" [(ngModel)]="regProducto.tipo_producto" required>
+    </mat-form-field>
+    <div class="form-group">
+      <label for="foto">Foto </label>
+      <div class="input-group">
+        <input type="file" accept="image/*" (change)="handleFileInput($event)" id="foto" class="form-control-file">
+      </div>
+      <div *ngIf="fotoPreviewUrl" class="foto-preview">
+        <img [src]="fotoPreviewUrl" alt="Foto del producto">
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button mat-raised-button color="primary" type="submit">Agregar</button>
+    </div>
+  </form>
+</div>
+

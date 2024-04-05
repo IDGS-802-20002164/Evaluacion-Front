@@ -1,0 +1,117 @@
+h2, h3, h4, h5, th {
+  color: black;
+}
+
+.cardTable {
+  display: flex;
+  margin-top: 20px;
+}
+
+.cardTable-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.cardTable-card {
+  flex: 1;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  margin: 0 10px 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardTable-card:nth-child(1) {
+  margin-right: 20px;
+}
+
+.cardTable-card table {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-collapse: collapse;
+}
+
+.cardTable-card th,
+.cardTable-card td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.cardTable-card th {
+  background-color: #e6e6e6;
+}
+  .card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Define cuatro columnas con igual ancho */
+  grid-gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card-header {
+  font-size: 18px;
+  height: 5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.card-body {
+  font-size: 18px;
+  color: black;
+}
+
+/* Estilos para la gráfica */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  max-width: 1800px;
+  margin: 30px ;
+}
+
+.chart-card {
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px; /* Ajusta la altura deseada */
+  width: 50%; /* Ajusta el ancho deseado */
+  margin-left:  10%; ;
+}
+
+
+.cardGrapf {
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.custom-select {
+  font-size: 16px;
+  padding: 5px 10px;
+  width: 200px;
+}
+
+.white-label {
+  fill: white;
+}
+

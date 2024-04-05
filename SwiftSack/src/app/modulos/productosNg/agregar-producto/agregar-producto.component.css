@@ -1,0 +1,83 @@
+.edit-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #c4ba9c; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.edit-form h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.edit-form hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.edit-form form {
+  margin-bottom: 20px;
+}
+
+.edit-form .form-group {
+  margin-bottom: 15px;
+}
+
+.form-group{
+  width: 22rem;
+  border-radius: 4px;
+}
+
+.edit-form label {
+  display: block;
+  font-weight: bold;
+  color: #555; /* Cambiado el color de las etiquetas */
+}
+
+.edit-form .form-control {
+  width: 100%; /* Utilizar todo el ancho disponible */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para el botón "Ver Foto" */
+.edit-form .input-group {
+  display: flex;
+  align-items: center;
+}
+
+.edit-form .btn-secondary {
+  margin-left: 10px;
+  background-color: #6c757d; /* Cambiado el color del botón */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-form .btn-secondary:hover {
+  background-color: #5a6268; /* Cambiado el color del botón al pasar el ratón */
+}
+
+/* ... otros estilos ... */
+
+/* Estilos para el div de vista previa de la foto */
+.foto-preview {
+  margin-top: 20px; /* Aumentado el margen superior */
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.foto-preview img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

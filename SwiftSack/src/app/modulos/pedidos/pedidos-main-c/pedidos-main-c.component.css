@@ -1,0 +1,12 @@
+h3, h4 {
+    color: #303030;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.title{
+    height: 4.5rem;
+    align-items: center;
+}

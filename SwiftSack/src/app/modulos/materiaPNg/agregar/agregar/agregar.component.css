@@ -1,0 +1,53 @@
+.edit-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #c4ba9c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .edit-form h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .edit-form hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .edit-form form {
+    margin-bottom: 20px;
+  }
+  
+  .edit-form .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group{
+    width: 22rem;
+    border-radius: 4px;
+  }
+  
+  .edit-form label {
+    display: block;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  
+  .edit-form .form-control {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <div class="card col-8 rounded-pill title" style="background-color: #c4ba9c">
+                <div class="card-body">
+                    <h1>Pedidos</h1>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let pedido of pedidos" class="row d-flex justify-content-center">
+            <div class="card mt-4 col-7">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <h3>Folio: <strong>{{pedido.folio}}</strong></h3>
+                            <h4 *ngIf="pedido.estatus == 1" class="tracking-status mt-3">Estado: Fabricando</h4>
+                            <h4 *ngIf="pedido.estatus == 2" class="tracking-status mt-3">Estado: Enviado</h4>
+                            <h4 *ngIf="pedido.estatus == 3" class="tracking-status mt-3">Estado: Lleg&oacute; al punto de recolecci&oacute;n</h4>
+                            <h4 *ngIf="pedido.estatus == 4" class="tracking-status mt-3">Estado: En proceso de entrega</h4>
+                            <h4 *ngIf="pedido.estatus == 5" class="tracking-status mt-3">Estado: Entregado</h4>
+                        </div>
+                        <div class="col-2 mt-3">
+                            <button mat-raised-button color="primary" class="p-4" [routerLink]="['/VerDetallePedido',pedido.id]">Ver Pedido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

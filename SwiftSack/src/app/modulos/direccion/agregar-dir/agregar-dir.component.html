@@ -1,0 +1,25 @@
+<div class="edit-form">
+    <h3>Agregar Direcci&oacute;n</h3>
+    <hr>
+    <form (ngSubmit)="agregar()">
+        <mat-form-field class="example-full-width form-group">
+            <mat-label>Nombre completo</mat-label>
+            <input name="nombreCompleto" matInput placeholder="Nombre Completo" [(ngModel)]="dir.nombreCompleto" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width form-group">
+            <mat-label>Calle y N&uacute;mero</mat-label>
+            <input matInput name="calleNumero" placeholder="Av. Insurgentes #484" [(ngModel)]="dir.calleNumero" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width form-group">
+            <mat-label>C&oacute;digo Postal</mat-label>
+            <input name="codigoPostal" matInput placeholder="12345" [(ngModel)]="dir.codigoPostal" pattern="[0-9]*" required maxlength="5">
+        </mat-form-field>
+        <mat-form-field class="example-full-width form-group">
+            <mat-label>Tel&eacute;fono</mat-label>
+            <input name="telefono" matInput placeholder="4771234567" [(ngModel)]="dir.telefono" pattern="[0-9]*" required maxlength="10">
+        </mat-form-field>
+        <div class="d-flex justify-content-center">
+            <button mat-raised-button color="primary">Agregar</button>
+        </div>
+    </form>
+  </div>

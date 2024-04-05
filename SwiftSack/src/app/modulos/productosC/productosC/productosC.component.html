@@ -1,0 +1,30 @@
+<!-- Shop Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <!-- Product Start -->
+            <div class="col-12">
+              <div class="row pb-3">
+                  <div *ngFor="let producto of productos | productoFilter:selectedPriceRange " class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                    <div class="product-item bg-light mb-4">
+                      <div class="product-img position-relative overflow-hidden">
+                          <img class="img-fixed-size" [src]="producto.foto" alt="Foto del producto">
+                          <div class="product-action">
+                              <a class="btn btn-outline-dark btn-square" (click)="addCarrito(1, producto.id)" style="color: black;"><i class="fa fa-shopping-cart"></i></a>
+                              <a class="btn btn-outline-dark btn-square" [routerLink]="['/verDetalleProducto', producto.id]"><i class="fa fa-search"></i></a>
+                          </div>
+                      </div>
+                      <div class="text-center py-4">
+                          <a class="h6 text-decoration-none text-truncate" href="">{{ producto.nombre }}</a>
+                          <div class="d-flex align-items-center justify-content-center mt-2">
+                              <h5>${{ producto.costo }}</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            </div>
+        </div>
+        <!-- Shop Product End -->
+    </div>
+
+<!-- Shop End -->

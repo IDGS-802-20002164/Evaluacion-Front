@@ -1,0 +1,33 @@
+<div class="edit-form">
+  <h3>Agregar Materia Prima</h3>
+  <hr>
+  <form (ngSubmit)="agregar()">
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Nombre</mat-label>
+      <input name="nombre" matInput placeholder="Nombre" [(ngModel)]="regMateriaPss.nombre" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Cantidad</mat-label>
+      <input name="cantidad" type="number" matInput placeholder="Cantidad" [(ngModel)]="regMateriaPss.cantidad" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Unidad de medida</mat-label>
+      <input name="unidad_medida" matInput placeholder="Unidad de medida" [(ngModel)]="regMateriaPss.unidad_medida" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Costo</mat-label>
+      <input name="costo" type="number" matInput placeholder="Costo" [(ngModel)]="regMateriaPss.costo" required>
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <mat-label>Proveedor:</mat-label>
+      <mat-select name="idProveedor" [(ngModel)]="regMateriaPss.idProveedor" id="idProveedor" required>
+        <mat-option *ngFor="let proveedor of proveedores" [value]="proveedor.id">
+          {{ proveedor.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="d-flex justify-content-center">
+      <button mat-raised-button color="primary" type="submit">Agregar</button>
+    </div>
+  </form>
+</div>

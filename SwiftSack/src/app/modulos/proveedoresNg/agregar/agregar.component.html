@@ -1,0 +1,29 @@
+<div class="edit-form">
+  <h3>Agregar Proveedor</h3>
+  <hr>
+  <form (ngSubmit)="agregar()">
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Nombre</mat-label>
+      <input name="nombre" matInput placeholder="Nombre" [(ngModel)]="regProveedor.nombre" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Empresa</mat-label>
+      <input name="empresa" matInput placeholder="Empresa" [(ngModel)]="regProveedor.empresa" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Email</mat-label>
+      <input name="email" matInput placeholder="Email" [(ngModel)]="regProveedor.email" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>RFC</mat-label>
+      <input name="rfc" matInput placeholder="RFC" [(ngModel)]="regProveedor.rfc" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Tel&eacute;fono</mat-label>
+      <input name="telefono" matInput placeholder="Telefono" [(ngModel)]="regProveedor.telefono" pattern="[0-9]*" required>
+    </mat-form-field>
+    <div class="d-flex justify-content-center">
+      <button mat-raised-button color="primary" type="submit">Agregar</button>
+    </div>
+  </form>
+</div>
